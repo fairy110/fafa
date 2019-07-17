@@ -24,12 +24,23 @@ size = (vw, vh)
 #生成的视频的格式
 videoWriter = cv2.VideoWriter(new_video, cv2.VideoWriter_fourcc(*'.avi'), fps, size)
 success, frame = videoCapture.read()
+エラー：
 #avi格式：error
 #OpenCV: FFMPEG: tag 0x6976612e/'.avi' is not found (format 'avi / AVI (Audio Video Interleaved)')'
 #[ERROR:0] VIDEOIO(MSMF): raised unknown C++ exception!
-#mp4格式的 不能写入
-#OpenCV: FFMPEG: tag 0x58564944/'DIVX' is not supported with codec id 12 and format 'mp4 / MP4 (MPEG-4 Part 14)'
-#OpenCV: FFMPEG: fallback to use tag 0x7634706d/'mp4v'
+#mp4格式的 error
+fourcc = cv2.VideoWriter_fourcc(*'.mp4')
+#OpenCV: FFMPEG: tag 0x34706d2e/'.mp4' is not found (format 'mp4 / MP4 (MPEG-4 Part 14)')'
+[ERROR:0] VIDEOIO(MSMF): raised unknown C++ exception!
+fourcc = cv2.VideoWriter_fourcc('M','J','P','G')
+OpenCV: FFMPEG: tag 0x47504a4d/'MJPG' is not supported with codec id 7 and format 'mp4 / MP4 (MPEG-4 Part 14)'
+OpenCV: FFMPEG: fallback to use tag 0x7634706d/'mp4v'
+#fourcc = cv2.VideoWriter_fourcc('P','I','M','1')
+OpenCV: FFMPEG: tag 0x314d4950/'PIM1' is not supported with codec id 1 and format 'mp4 / MP4 (MPEG-4 Part 14)'
+OpenCV: FFMPEG: fallback to use tag 0x7634706d/'mp4v'
+#fourcc = cv2.VideoWriter_fourcc('D', 'I', 'V', 'X')
+OpenCV: FFMPEG: tag 0x58564944/'DIVX' is not supported with codec id 12 and format 'mp4 / MP4 (MPEG-4 Part 14)'
+OpenCV: FFMPEG: fallback to use tag 0x7634706d/'mp4v'
 
 
 while success:
