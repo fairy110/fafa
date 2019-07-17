@@ -21,7 +21,7 @@ else:
 fps = videoCapture.get(cv2.CAP_PROP_FPS)
 size = (vw, vh)
 
-videoWriter = cv2.VideoWriter(new_video, cv2.VideoWriter_fourcc(*'.avi'), fps, size)
+videoWriter = cv2.VideoWriter(new_video, cv2.VideoWriter_fourcc(*'.avi'), fps, size)//写入视频
 success, frame = videoCapture.read()
 
 while success:
