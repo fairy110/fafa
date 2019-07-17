@@ -32,6 +32,12 @@ success, frame = videoCapture.read()
 #OpenCV: FFMPEG: fallback to use tag 0x7634706d/'mp4v'
 
 
+#小康康建议
+fourcc = cv2.VideoWriter_fourcc(*'DIVX')
+videoWriter = cv2.VideoWriter(new_video, fourcc, fps, size, Ture)
+success, frame = videoCapture.read()
+#给成这样子试试看行不行
+
 while success:
     frame = frame[cx:cx+vw,cy:cy+vh]
     videoWriter.write(frame)
