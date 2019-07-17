@@ -28,6 +28,9 @@ success, frame = videoCapture.read()
 #OpenCV: FFMPEG: tag 0x6976612e/'.avi' is not found (format 'avi / AVI (Audio Video Interleaved)')'
 #[ERROR:0] VIDEOIO(MSMF): raised unknown C++ exception!
 #mp4格式的 不能写入
+#OpenCV: FFMPEG: tag 0x58564944/'DIVX' is not supported with codec id 12 and format 'mp4 / MP4 (MPEG-4 Part 14)'
+#OpenCV: FFMPEG: fallback to use tag 0x7634706d/'mp4v'
+
 
 while success:
     frame = frame[cx:cx+vw,cy:cy+vh]
