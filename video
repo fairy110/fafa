@@ -29,6 +29,12 @@ success, frame = videoCapture.read()
 #[ERROR:0] VIDEOIO(MSMF): raised unknown C++ exception!
 #mp4格式的 不能写入
 
+#小康康建议
+fourcc = cv2.VideoWriter_fourcc(*'DIVX')
+videoWriter = cv2.VideoWriter(new_video, fourcc, fps, size, Ture)
+success, frame = videoCapture.read()
+#给成这样子试试看行不行
+
 while success:
     frame = frame[cx:cx+vw,cy:cy+vh]
     videoWriter.write(frame)
