@@ -1,0 +1,31 @@
+import cv2
+import os 
+from skimage import io
+
+root=os.getcwd()
+path=os.path.abspath(root+'0_mp4_result/')
+
+cx=783
+cy=95
+vw=1024
+vh=880
+new_video='0_test.mp4'
+video_path=os.path.abspath('0_mp4_result/'+'0.mp4')
+
+videoCapture = cv2.VideoCapture(video_path)
+if (videoCapture.isOpened()):
+    print('Open')
+else:
+    print('Fail to open!')
+  
+fps = videoCapture.get(cv2.CAP_PROP_FPS)
+size = (vw, vh)
+
+videoWriter = cv2.VideoWriter(new_video, cv2.VideoWriter_fourcc(*'.avi'), fps, size)
+success, frame = videoCapture.read()
+
+while success:
+    frame = frame[cx:cx+vw,cy:cy+vh]
+    videoWriter.write(frame)
+    success, frame = videoCapture.read() 
+videoCapture.release()
